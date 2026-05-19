@@ -89,6 +89,15 @@ function toggleFullscreen() {
   }
 }
 
+// Fullscreen button
+const fsBtn = document.getElementById('fsBtn');
+if (fsBtn) {
+  fsBtn.addEventListener('click', toggleFullscreen);
+  document.addEventListener('fullscreenchange', () => {
+    fsBtn.classList.toggle('active-fs', !!document.fullscreenElement);
+  });
+}
+
 // Init from hash
 const hash = window.location.hash.slice(1);
 const initSlide = hash ? parseInt(hash) - 1 : 0;
