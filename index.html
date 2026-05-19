@@ -90,22 +90,22 @@
       <div class="demo-box">
         <div class="demo-header">
           <div class="demo-dots"><span></span><span></span><span></span></div>
-          <div class="demo-url">💰 Catatan Keuangan Pribadi — pencatat pemasukan &amp; pengeluaran harian</div>
+          <div class="demo-url">🍽️ POS Mini Restoran — kasir digital untuk warung &amp; restoran kecil</div>
         </div>
         <div class="demo-features">
-          <div class="feat"><span class="feat-icon">🔐</span><div><strong>Login/Register</strong><br><small>Email + password aman</small></div></div>
-          <div class="feat"><span class="feat-icon">💵</span><div><strong>Catat Pemasukan</strong><br><small>Gaji, jualan, freelance, dll</small></div></div>
-          <div class="feat"><span class="feat-icon">💸</span><div><strong>Catat Pengeluaran</strong><br><small>Makan, transport, tagihan</small></div></div>
-          <div class="feat"><span class="feat-icon">🏷️</span><div><strong>Kategori &amp; Tag</strong><br><small>Filter berdasar jenis</small></div></div>
-          <div class="feat"><span class="feat-icon">📊</span><div><strong>Dashboard &amp; Chart</strong><br><small>Visualisasi keuangan bulanan</small></div></div>
-          <div class="feat"><span class="feat-icon">📅</span><div><strong>Filter Tanggal</strong><br><small>Lihat per hari/minggu/bulan</small></div></div>
-          <div class="feat"><span class="feat-icon">👥</span><div><strong>Data Per User</strong><br><small>Privasi keuangan terjaga</small></div></div>
-          <div class="feat"><span class="feat-icon">📱</span><div><strong>Mobile-First</strong><br><small>Catat langsung dari HP</small></div></div>
+          <div class="feat"><span class="feat-icon">🔐</span><div><strong>Login Kasir</strong><br><small>Multi-user, role-based</small></div></div>
+          <div class="feat"><span class="feat-icon">📋</span><div><strong>Daftar Menu</strong><br><small>Kelola menu + harga + kategori</small></div></div>
+          <div class="feat"><span class="feat-icon">🛒</span><div><strong>Buat Pesanan</strong><br><small>Pilih menu, atur qty, notes</small></div></div>
+          <div class="feat"><span class="feat-icon">💰</span><div><strong>Hitung Total &amp; Bayar</strong><br><small>Cash / QRIS, kembalian otomatis</small></div></div>
+          <div class="feat"><span class="feat-icon">🧾</span><div><strong>Cetak Struk</strong><br><small>Struk digital / thermal print</small></div></div>
+          <div class="feat"><span class="feat-icon">📊</span><div><strong>Laporan Penjualan</strong><br><small>Harian, mingguan, bulanan</small></div></div>
+          <div class="feat"><span class="feat-icon">📱</span><div><strong>Mobile-First</strong><br><small>Bisa pakai dari tablet/HP</small></div></div>
+          <div class="feat"><span class="feat-icon">🚀</span><div><strong>Live di Internet</strong><br><small>Akses dari mana aja</small></div></div>
         </div>
-        <div class="demo-output">✓ App live · sehari-hari kepake · keuangan kamu rapi · bisa dibagi ke pasangan/keluarga</div>
+        <div class="demo-output">✓ App live · langsung bisa dipakai di warung/restoran · data aman di cloud</div>
       </div>
       <div class="callout" style="margin-top: 1.5rem;">
-        💡 <strong>Kenapa pilih ini?</strong> Semua orang butuh catat keuangan. Kamu sendiri pasti pakai. Hari pertama deploy = langsung ada user beneran (kamu, pasangan, anak kos).
+        💡 <strong>Kenapa POS?</strong> Jutaan UMKM kuliner di Indonesia masih pakai nota kertas. App ini langsung bisa dipakai di warung makan, kafe, atau restoran kecil. Real impact, real users.
       </div>
     </div>
   </section>
@@ -307,7 +307,7 @@
           <div class="agenda-time">10:30 - 11:00</div>
           <div class="agenda-content">
             <h4>Part 4 · CRUD &amp; Git Discipline</h4>
-            <p>AI bangun fitur transaksi keuangan. Commit per perubahan. Iteratif.</p>
+            <p>AI bangun fitur pesanan & pembayaran. Commit per perubahan. Iteratif.</p>
           </div>
         </div>
         <div class="agenda-item">
@@ -479,7 +479,7 @@
 
       <div class="code-demo">
         <div class="code-header">💬 Prompt ke AI Agent (copy-paste ini)</div>
-<pre class="prompt-snippet">Saya mau bikin <span class="hl">aplikasi Catatan Keuangan Pribadi</span>.
+<pre class="prompt-snippet">Saya mau bikin <span class="hl">aplikasi POS (Point of Sale) Mini untuk Restoran</span>.
 Sebelum kita coding, tolong bikinkan saya <span class="hl">PRD lengkap</span> dengan format:
 
 <span class="prompt-key">1. Overview</span>
@@ -622,7 +622,7 @@ dan postgresql-table-design yang sudah keinstall.
 <span class="prompt-key">Konteks:</span> Baca PRD.md di root project. Itu adalah source of truth.
 
 <span class="prompt-key">Tugas hari ini:</span>
-Scaffold project Catatan Keuangan Pribadi sesuai PRD. Tahapan:
+Scaffold project POS Mini Restoran sesuai PRD. Tahapan:
 1. Setup Next.js 14 + Tailwind + TypeScript
 2. Setup koneksi ke Supabase (saya kasih URL &amp; anon key)
 3. Bikin landing page sederhana
@@ -660,12 +660,12 @@ Scaffold project Catatan Keuangan Pribadi sesuai PRD. Tahapan:
 <span class="prompt-key">2.</span> Aktifin <span class="hl">Row Level Security</span> — user cuma bisa akses data miliknya
 <span class="prompt-key">3.</span> Bikin policy untuk select, insert, update, delete
 <span class="prompt-key">4.</span> Tambahin index buat kolom yang sering di-query
-<span class="prompt-key">5.</span> Generate seed data 5 contoh transaksi (mix pemasukan &amp; pengeluaran) untuk testing
+<span class="prompt-key">5.</span> Generate seed data 5 contoh menu restoran (makanan &amp; minuman) untuk testing
 
 Setelah selesai:
 - Kasih saya step-by-step cara apply ke Supabase dashboard
 - Test connection dari project Next.js
-- Commit hasilnya: "feat(db): add transactions schema with RLS"</pre>
+- Commit hasilnya: "feat(db): add menu &amp; orders schema with RLS"</pre>
 
         <div class="code-header">🤖 Yang AI Lakukan</div>
 <pre class="code-output"><span class="comment">✓ Baca PRD.md untuk dapat schema requirements</span>
@@ -675,7 +675,7 @@ Setelah selesai:
 <span class="comment">✓ Tulis dokumentasi di docs/database-setup.md</span>
 <span class="comment">✓ Setup Supabase client di lib/supabase.ts</span>
 <span class="comment">✓ Test koneksi → all green</span>
-<span class="comment">✓ Git commit: "feat(db): add transactions schema with RLS"</span></pre>
+<span class="comment">✓ Git commit: "feat(db): add menu &amp; orders schema with RLS"</span></pre>
       </div>
 
       <div class="callout" style="margin-top: 1.5rem;">
@@ -764,7 +764,7 @@ Setelah selesai:
           <div class="letter-big">📋</div>
           <div>
             <h4>Contoh Commit Message yang Bagus</h4>
-            <p><code>feat(auth): add register page</code> · <code>feat(transactions): add CRUD operations</code> · <code>fix(rls): correct policy for transaction update</code> · <code>docs: update README with setup steps</code></p>
+            <p><code>feat(auth): add register page</code> · <code>feat(orders): add create order flow</code> · <code>fix(rls): correct policy for order access</code> · <code>docs: update README with setup steps</code></p>
           </div>
         </div>
       </div>
@@ -781,7 +781,7 @@ Setelah selesai:
           <div class="wf-num">1</div>
           <div class="wf-content">
             <h4>Kamu kasih instruksi spesifik</h4>
-            <p><em>"Bikin halaman list transaksi, ambil dari database, urutkan by tanggal terbaru"</em></p>
+            <p><em>"Bikin halaman daftar menu dengan grid card, ambil dari database, urutkan by kategori"</em></p>
           </div>
         </div>
         <div class="wf-step">
@@ -809,7 +809,7 @@ Setelah selesai:
           <div class="wf-num">5</div>
           <div class="wf-content">
             <h4>Kalau jalan → AI commit otomatis</h4>
-            <p><code>feat(transactions): add list page sorted by date</code></p>
+            <p><code>feat(menu): add menu grid page sorted by category</code></p>
           </div>
         </div>
         <div class="wf-step">
