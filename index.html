@@ -1,0 +1,879 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Workshop FIKOM UDB — Build Full-Stack App with AI Agent</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- Progress Bar -->
+<div class="progress"><div class="progress-bar" id="progressBar"></div></div>
+
+<!-- Slide Counter -->
+<div class="counter">
+  <span id="currentSlide">1</span> / <span id="totalSlides">20</span>
+</div>
+
+<!-- Nav Buttons -->
+<div class="nav-buttons">
+  <button class="nav-btn" id="prevBtn" aria-label="Previous">←</button>
+  <button class="nav-btn" id="nextBtn" aria-label="Next">→</button>
+</div>
+
+<!-- Slides Container -->
+<div class="slides">
+
+  <!-- SLIDE 1: COVER -->
+  <section class="slide slide-cover active">
+    <div class="bg-grid"></div>
+    <div class="bg-blob blob-1"></div>
+    <div class="bg-blob blob-2"></div>
+    <div class="slide-inner">
+      <div class="badge">⚡ FIKOM UDB · ADVANCED WORKSHOP via ZOOM</div>
+      <h1 class="title-xl">
+        Build <span class="gradient">Full-Stack App</span><br>
+        from Zero to <span class="accent">Production</span><br>
+        Pakai <span class="gradient">AI Agent</span> 🤖
+      </h1>
+      <p class="subtitle">Codex + Vercel + Supabase = aplikasi lengkap yang bisa dipakai user beneran. Dalam 1 hari.</p>
+      <div class="cover-meta">
+        <div><strong>Universitas Duta Bangsa</strong> · Fakultas Ilmu Komputer</div>
+        <div class="cover-tags">
+          <span class="tag">#FullStack</span>
+          <span class="tag">#AIAgent</span>
+          <span class="tag">#Supabase</span>
+          <span class="tag">#Vercel</span>
+          <span class="tag">#Production</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SLIDE 2: KENAPA FULL-STACK -->
+  <section class="slide">
+    <div class="slide-inner">
+      <span class="eyebrow">01 · WHY FULL-STACK?</span>
+      <h2 class="title-lg">Kenapa Bikin <span class="accent">Aplikasi Utuh</span>?</h2>
+      <div class="cards-3">
+        <div class="card">
+          <div class="card-icon">📊</div>
+          <h3>Portfolio ≠ Skill</h3>
+          <p>Static page cuma bukti kamu bisa HTML/CSS. App utuh = bukti kamu bisa solve real problem.</p>
+        </div>
+        <div class="card highlight">
+          <div class="card-icon">💼</div>
+          <h3>Industri Hire Builder</h3>
+          <p>Junior developer yang bisa ship product end-to-end > yang cuma bisa satu sisi.</p>
+        </div>
+        <div class="card">
+          <div class="card-icon">🚀</div>
+          <h3>Real Users = Real Money</h3>
+          <p>Kalau apl-mu dipakai 100 user, itu sudah bisnis. Skripsi? Auto.</p>
+        </div>
+      </div>
+      <div class="quote-box">
+        <p>"In 2026, anyone can talk. Builders ship. AI agents = your full team."</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- SLIDE 3: APA YANG MAU KITA BUAT -->
+  <section class="slide">
+    <div class="slide-inner">
+      <span class="eyebrow">02 · TARGET</span>
+      <h2 class="title-lg">Yang Mau Kita <span class="accent">Build Hari Ini</span></h2>
+      <div class="demo-box">
+        <div class="demo-header">
+          <div class="demo-dots"><span></span><span></span><span></span></div>
+          <div class="demo-url">📌 Task Manager App — multi-user, real database</div>
+        </div>
+        <div class="demo-features">
+          <div class="feat"><span class="feat-icon">🔐</span><div><strong>Login/Register</strong><br><small>Email + password via Supabase Auth</small></div></div>
+          <div class="feat"><span class="feat-icon">✏️</span><div><strong>CRUD Tasks</strong><br><small>Create, Read, Update, Delete</small></div></div>
+          <div class="feat"><span class="feat-icon">🏷️</span><div><strong>Categories &amp; Tags</strong><br><small>Filter & organize</small></div></div>
+          <div class="feat"><span class="feat-icon">📅</span><div><strong>Due Date &amp; Priority</strong><br><small>High/Medium/Low</small></div></div>
+          <div class="feat"><span class="feat-icon">👥</span><div><strong>Multi-user Isolation</strong><br><small>Tiap user data terpisah (RLS)</small></div></div>
+          <div class="feat"><span class="feat-icon">🌙</span><div><strong>Dark Mode</strong><br><small>Persisted preference</small></div></div>
+          <div class="feat"><span class="feat-icon">📱</span><div><strong>Responsive</strong><br><small>Desktop + mobile</small></div></div>
+          <div class="feat"><span class="feat-icon">🚀</span><div><strong>Deploy ke Vercel</strong><br><small>Auto-deploy from Git</small></div></div>
+        </div>
+        <div class="demo-output">✓ App live · users bisa daftar · data tersimpan · siap di-share di LinkedIn</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SLIDE 4: STACK YANG DIPAKAI -->
+  <section class="slide">
+    <div class="slide-inner">
+      <span class="eyebrow">03 · THE STACK</span>
+      <h2 class="title-lg">Modern Stack untuk <span class="accent">Solo Builder</span></h2>
+      <div class="stack-grid">
+        <div class="stack-card">
+          <div class="stack-icon">🤖</div>
+          <h3>Codex / Claude Code</h3>
+          <p>AI agent yang nulis kode, debug, refactor. Bukan autocomplete — tapi <strong>full coding partner</strong>.</p>
+          <code>Free tier · ChatGPT Plus / Claude</code>
+        </div>
+        <div class="stack-card">
+          <div class="stack-icon">⚛️</div>
+          <h3>Next.js 14</h3>
+          <p>React framework dengan App Router, Server Components, API routes. Standard industri.</p>
+          <code>npx create-next-app@latest</code>
+        </div>
+        <div class="stack-card">
+          <div class="stack-icon">🗄️</div>
+          <h3>Supabase</h3>
+          <p>Postgres + Auth + Storage + Realtime — semua-in-one. Free tier 500 MB DB.</p>
+          <code>supabase.com (gratis)</code>
+        </div>
+        <div class="stack-card">
+          <div class="stack-icon">🚀</div>
+          <h3>Vercel</h3>
+          <p>Deploy Next.js sekali klik. Auto SSL, CDN global, preview per branch.</p>
+          <code>vercel.com (gratis)</code>
+        </div>
+        <div class="stack-card">
+          <div class="stack-icon">🎨</div>
+          <h3>Tailwind CSS</h3>
+          <p>Utility-first CSS. Bikin UI cantik tanpa nulis CSS file.</p>
+          <code>built-in di Next.js</code>
+        </div>
+        <div class="stack-card">
+          <div class="stack-icon">🐙</div>
+          <h3>GitHub</h3>
+          <p>Version control + auto-deploy trigger ke Vercel. Wajib hukumnya.</p>
+          <code>github.com (gratis)</code>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SLIDE 5: AI AGENT VS COPILOT -->
+  <section class="slide">
+    <div class="slide-inner">
+      <span class="eyebrow">04 · AI EVOLUTION</span>
+      <h2 class="title-lg">AI Agent ≠ <span class="accent">Copilot Biasa</span></h2>
+      <div class="compare-grid">
+        <div class="compare-card old">
+          <div class="compare-tag">❌ AUTOCOMPLETE ERA</div>
+          <h3>GitHub Copilot</h3>
+          <ul>
+            <li>Saran kode satu baris</li>
+            <li>Kamu yang bikin file</li>
+            <li>Kamu yang debug</li>
+            <li>Kamu yang test</li>
+            <li>Kamu yang deploy</li>
+          </ul>
+          <div class="compare-summary">"Helper kecil"</div>
+        </div>
+        <div class="compare-card new">
+          <div class="compare-tag">✅ AGENT ERA</div>
+          <h3>Codex / Claude Code</h3>
+          <ul>
+            <li>Bikin <strong>multi-file project</strong></li>
+            <li>Run terminal commands</li>
+            <li>Debug error sendiri</li>
+            <li>Run & verify tests</li>
+            <li>Deploy & monitor</li>
+          </ul>
+          <div class="compare-summary">"Junior dev di tim kamu"</div>
+        </div>
+      </div>
+      <p class="big-takeaway">💡 Kamu = <strong>Product Manager</strong>, AI = <strong>Engineer</strong></p>
+    </div>
+  </section>
+
+  <!-- SLIDE 6: PERSIAPAN -->
+  <section class="slide">
+    <div class="slide-inner">
+      <span class="eyebrow">05 · PREP</span>
+      <h2 class="title-lg">Sebelum Workshop, <span class="accent">Siapkan Ini</span></h2>
+      <div class="prep-list">
+        <div class="prep-item">
+          <span class="prep-num">1</span>
+          <div>
+            <h4>Akun GitHub</h4>
+            <p>Daftar di <code>github.com</code> · pakai email kampus</p>
+          </div>
+        </div>
+        <div class="prep-item">
+          <span class="prep-num">2</span>
+          <div>
+            <h4>Akun Vercel</h4>
+            <p>Login pakai GitHub di <code>vercel.com</code></p>
+          </div>
+        </div>
+        <div class="prep-item">
+          <span class="prep-num">3</span>
+          <div>
+            <h4>Akun Supabase</h4>
+            <p>Login pakai GitHub di <code>supabase.com</code> · bikin 1 project gratis</p>
+          </div>
+        </div>
+        <div class="prep-item">
+          <span class="prep-num">4</span>
+          <div>
+            <h4>ChatGPT Plus / Claude Pro</h4>
+            <p>Untuk akses Codex / Claude Code · ~Rp 300rb/bulan</p>
+          </div>
+        </div>
+        <div class="prep-item">
+          <span class="prep-num">5</span>
+          <div>
+            <h4>Node.js 20+ &amp; Git</h4>
+            <p>Install dari <code>nodejs.org</code> &amp; <code>git-scm.com</code></p>
+          </div>
+        </div>
+        <div class="prep-item">
+          <span class="prep-num">6</span>
+          <div>
+            <h4>VS Code</h4>
+            <p>Editor + extensions: ESLint, Tailwind IntelliSense, GitLens</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SLIDE 7: SUSUNAN WORKSHOP -->
+  <section class="slide">
+    <div class="slide-inner">
+      <span class="eyebrow">06 · AGENDA</span>
+      <h2 class="title-lg">Susunan <span class="accent">8 Jam Workshop</span></h2>
+      <div class="agenda-grid">
+        <div class="agenda-item">
+          <div class="agenda-time">09:00 - 10:00</div>
+          <div class="agenda-content">
+            <h4>Part 1 · Foundation</h4>
+            <p>Setup tools, intro AI agent, brainstorm ide aplikasi</p>
+          </div>
+        </div>
+        <div class="agenda-item">
+          <div class="agenda-time">10:00 - 11:30</div>
+          <div class="agenda-content">
+            <h4>Part 2 · Database Design</h4>
+            <p>Setup Supabase, design schema dengan AI, RLS policy</p>
+          </div>
+        </div>
+        <div class="agenda-item">
+          <div class="agenda-time">11:30 - 12:30</div>
+          <div class="agenda-content">
+            <h4>Part 3 · App Scaffolding</h4>
+            <p>Codex bikin Next.js project, install Supabase client</p>
+          </div>
+        </div>
+        <div class="agenda-item">
+          <div class="agenda-time">13:30 - 15:00</div>
+          <div class="agenda-content">
+            <h4>Part 4 · Auth &amp; CRUD</h4>
+            <p>Login flow, protected routes, CRUD tasks</p>
+          </div>
+        </div>
+        <div class="agenda-item">
+          <div class="agenda-time">15:00 - 16:00</div>
+          <div class="agenda-content">
+            <h4>Part 5 · UI Polish</h4>
+            <p>Tailwind styling, dark mode, responsive, animations</p>
+          </div>
+        </div>
+        <div class="agenda-item">
+          <div class="agenda-time">16:00 - 17:00</div>
+          <div class="agenda-content">
+            <h4>Part 6 · Deploy &amp; Demo</h4>
+            <p>Push GitHub, deploy Vercel, env variables, custom domain</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SLIDE 8: PROMPT FRAMEWORK -->
+  <section class="slide">
+    <div class="slide-inner">
+      <span class="eyebrow">07 · PROMPT</span>
+      <h2 class="title-lg">Framework <span class="accent">PROMPT yang Baik</span></h2>
+      <div class="prompt-framework">
+        <div class="frame-letter">
+          <div class="letter-big">P</div>
+          <div>
+            <h4>Persona</h4>
+            <p>"Kamu adalah <strong>senior fullstack developer</strong> dengan expertise Next.js + Supabase..."</p>
+          </div>
+        </div>
+        <div class="frame-letter">
+          <div class="letter-big">R</div>
+          <div>
+            <h4>Requirement</h4>
+            <p>Spec lengkap: tech stack, fitur, constraint, target user.</p>
+          </div>
+        </div>
+        <div class="frame-letter">
+          <div class="letter-big">O</div>
+          <div>
+            <h4>Output Format</h4>
+            <p>"Berikan struktur folder, lalu kode tiap file, lalu instruksi run."</p>
+          </div>
+        </div>
+        <div class="frame-letter">
+          <div class="letter-big">M</div>
+          <div>
+            <h4>Mode</h4>
+            <p>Step-by-step, tanya kalau ambigu, jelaskan kenapa pilih library tertentu.</p>
+          </div>
+        </div>
+        <div class="frame-letter">
+          <div class="letter-big">P</div>
+          <div>
+            <h4>Pitfalls</h4>
+            <p>"Hindari deprecated API. Pakai App Router. TypeScript strict mode ON."</p>
+          </div>
+        </div>
+        <div class="frame-letter">
+          <div class="letter-big">T</div>
+          <div>
+            <h4>Test</h4>
+            <p>"Setelah selesai, kasih checklist untuk verify app jalan."</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SLIDE 9: CONTOH PROMPT -->
+  <section class="slide">
+    <div class="slide-inner">
+      <span class="eyebrow">08 · EXAMPLE</span>
+      <h2 class="title-lg">The <span class="accent">Magic Prompt</span> 🪄</h2>
+      <div class="prompt-example">
+<pre><span class="prompt-key">Persona:</span> Kamu senior fullstack developer expert Next.js 14 + Supabase + TypeScript.
+
+<span class="prompt-key">Project:</span> Task Manager Web App
+<span class="prompt-key">Stack:</span>
+- Next.js 14 (App Router, TypeScript, Tailwind CSS)
+- Supabase (Auth + Postgres + RLS)
+- Deploy ke Vercel
+
+<span class="prompt-key">Features:</span>
+1. Auth: register, login, logout via email/password
+2. Dashboard: list tasks user yang lagi login
+3. CRUD task: title, description, due_date, priority (high/med/low),
+   status (todo/in_progress/done), category
+4. Filter by status & priority
+5. Dark mode toggle (persisted di localStorage)
+6. Responsive: mobile + desktop
+
+<span class="prompt-key">Database Schema:</span>
+- users (auth.users dari Supabase)
+- tasks (id, user_id FK, title, description, due_date, priority,
+         status, category, created_at)
+- RLS: user cuma bisa CRUD task miliknya sendiri
+
+<span class="prompt-key">Output:</span>
+1. Struktur folder lengkap
+2. SQL schema + RLS policies
+3. Kode tiap file (app/, components/, lib/)
+4. Instruksi setup .env, install deps, run dev
+5. Checklist test manual
+
+<span class="prompt-key">Constraints:</span> TypeScript strict, no <span class="any">any</span>,
+gunakan Server Components kalau memungkinkan, error handling proper.</pre>
+      </div>
+    </div>
+  </section>
+
+  <!-- SLIDE 10: WORKFLOW -->
+  <section class="slide">
+    <div class="slide-inner">
+      <span class="eyebrow">09 · WORKFLOW</span>
+      <h2 class="title-lg">Workflow Lengkap <span class="accent">Zero → Live</span></h2>
+      <div class="workflow-steps">
+        <div class="wf-step">
+          <div class="wf-num">1</div>
+          <div class="wf-content">
+            <h4>📋 Plan with AI</h4>
+            <p>Diskusi ide → AI bantu bikin spec, schema, & user flow. Output: 1 file <code>SPEC.md</code></p>
+          </div>
+        </div>
+        <div class="wf-step">
+          <div class="wf-num">2</div>
+          <div class="wf-content">
+            <h4>🗄️ Setup Database</h4>
+            <p>Supabase project → run SQL schema → set RLS policies → copy URL & anon key</p>
+          </div>
+        </div>
+        <div class="wf-step">
+          <div class="wf-num">3</div>
+          <div class="wf-content">
+            <h4>🏗️ Scaffold Project</h4>
+            <p>AI run <code>create-next-app</code> + install Supabase + setup project structure</p>
+          </div>
+        </div>
+        <div class="wf-step">
+          <div class="wf-num">4</div>
+          <div class="wf-content">
+            <h4>🔐 Auth First</h4>
+            <p>Bangun login/register/logout dulu sebelum fitur lain. Pastikan jalan.</p>
+          </div>
+        </div>
+        <div class="wf-step">
+          <div class="wf-num">5</div>
+          <div class="wf-content">
+            <h4>✏️ CRUD Iteratif</h4>
+            <p>Bikin satu fitur, test, commit, lanjut fitur berikutnya. Jangan sekali jadi.</p>
+          </div>
+        </div>
+        <div class="wf-step">
+          <div class="wf-num">6</div>
+          <div class="wf-content">
+            <h4>🎨 UI Polish</h4>
+            <p>Setelah fungsional jalan, baru styling. Tailwind utility classes + dark mode.</p>
+          </div>
+        </div>
+        <div class="wf-step">
+          <div class="wf-num">7</div>
+          <div class="wf-content">
+            <h4>🐙 Push GitHub</h4>
+            <p>Init repo, .gitignore (kecuali node_modules &amp; .env.local), commit, push</p>
+          </div>
+        </div>
+        <div class="wf-step">
+          <div class="wf-num">8</div>
+          <div class="wf-content">
+            <h4>🚀 Deploy Vercel</h4>
+            <p>Import dari GitHub → set env vars → klik deploy → live dalam 2 menit</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SLIDE 11: SUPABASE SETUP -->
+  <section class="slide">
+    <div class="slide-inner">
+      <span class="eyebrow">10 · SUPABASE</span>
+      <h2 class="title-lg">Setup Database <span class="accent">dengan AI</span></h2>
+      <div class="code-demo">
+        <div class="code-header">💬 Prompt ke Codex</div>
+<pre class="prompt-snippet">Generate Supabase SQL untuk tabel <span class="hl">tasks</span> dengan kolom:
+- id (uuid, primary key, default uuid_generate_v4())
+- user_id (uuid, FK ke auth.users)
+- title (text, required)
+- description (text)
+- due_date (timestamp)
+- priority (enum: high, medium, low)
+- status (enum: todo, in_progress, done)
+- category (text)
+- created_at, updated_at (timestamp)
+
+Plus RLS policies: user cuma bisa SELECT/INSERT/UPDATE/DELETE
+record dengan user_id = auth.uid()</pre>
+        <div class="code-header">🤖 Output AI</div>
+<pre class="code-output"><span class="comment">-- Create enum types</span>
+<span class="kw">CREATE TYPE</span> task_priority <span class="kw">AS ENUM</span> (<span class="str">'high'</span>, <span class="str">'medium'</span>, <span class="str">'low'</span>);
+<span class="kw">CREATE TYPE</span> task_status <span class="kw">AS ENUM</span> (<span class="str">'todo'</span>, <span class="str">'in_progress'</span>, <span class="str">'done'</span>);
+
+<span class="comment">-- Tasks table</span>
+<span class="kw">CREATE TABLE</span> tasks (
+  id uuid <span class="kw">PRIMARY KEY DEFAULT</span> uuid_generate_v4(),
+  user_id uuid <span class="kw">REFERENCES</span> auth.users(id) <span class="kw">ON DELETE CASCADE</span>,
+  title text <span class="kw">NOT NULL</span>,
+  description text,
+  due_date timestamptz,
+  priority task_priority <span class="kw">DEFAULT</span> <span class="str">'medium'</span>,
+  status task_status <span class="kw">DEFAULT</span> <span class="str">'todo'</span>,
+  category text,
+  created_at timestamptz <span class="kw">DEFAULT</span> now(),
+  updated_at timestamptz <span class="kw">DEFAULT</span> now()
+);
+
+<span class="comment">-- Enable RLS</span>
+<span class="kw">ALTER TABLE</span> tasks <span class="kw">ENABLE ROW LEVEL SECURITY</span>;
+
+<span class="comment">-- Policy: users only see own tasks</span>
+<span class="kw">CREATE POLICY</span> <span class="str">"own_tasks"</span> <span class="kw">ON</span> tasks
+  <span class="kw">FOR ALL USING</span> (auth.uid() = user_id);</pre>
+      </div>
+    </div>
+  </section>
+
+  <!-- SLIDE 12: AUTH FLOW -->
+  <section class="slide">
+    <div class="slide-inner">
+      <span class="eyebrow">11 · AUTH</span>
+      <h2 class="title-lg">Auth Flow dengan <span class="accent">Supabase</span></h2>
+      <div class="auth-flow">
+        <div class="flow-card">
+          <div class="flow-step">①</div>
+          <h4>User Register</h4>
+          <p>Form email + password → <code>supabase.auth.signUp()</code></p>
+          <p class="flow-detail">Supabase kirim verification email otomatis</p>
+        </div>
+        <div class="flow-arrow">→</div>
+        <div class="flow-card">
+          <div class="flow-step">②</div>
+          <h4>User Login</h4>
+          <p><code>supabase.auth.signInWithPassword()</code></p>
+          <p class="flow-detail">Return session + JWT token, simpan di cookie</p>
+        </div>
+        <div class="flow-arrow">→</div>
+        <div class="flow-card">
+          <div class="flow-step">③</div>
+          <h4>Protected Pages</h4>
+          <p>Middleware check session sebelum render</p>
+          <p class="flow-detail">Kalau gak login → redirect ke <code>/login</code></p>
+        </div>
+        <div class="flow-arrow">→</div>
+        <div class="flow-card">
+          <div class="flow-step">④</div>
+          <h4>RLS Auto-filter</h4>
+          <p>Query <code>SELECT * FROM tasks</code></p>
+          <p class="flow-detail">Postgres otomatis filter by <code>auth.uid()</code></p>
+        </div>
+      </div>
+      <div class="callout">
+        🔐 <strong>Magic-nya:</strong> kamu gak perlu nulis "WHERE user_id = ..." di setiap query. RLS handle di database level. Aman!
+      </div>
+    </div>
+  </section>
+
+  <!-- SLIDE 13: COMMANDS -->
+  <section class="slide">
+    <div class="slide-inner">
+      <span class="eyebrow">12 · COMMANDS</span>
+      <h2 class="title-lg">Commands Wajib <span class="accent">Diingat</span></h2>
+      <div class="cmd-grid">
+        <div class="cmd-card">
+          <h4>🏗️ Scaffold Next.js</h4>
+<pre class="cmd-block">npx create-next-app@latest my-app \
+  --typescript --tailwind --app
+cd my-app
+npm run dev</pre>
+        </div>
+        <div class="cmd-card">
+          <h4>📦 Install Supabase</h4>
+<pre class="cmd-block">npm install @supabase/supabase-js
+npm install @supabase/ssr</pre>
+        </div>
+        <div class="cmd-card">
+          <h4>🔑 Setup .env.local</h4>
+<pre class="cmd-block">NEXT_PUBLIC_SUPABASE_URL=https://xxx.supabase.co
+NEXT_PUBLIC_SUPABASE_ANON_KEY=eyJ...</pre>
+        </div>
+        <div class="cmd-card">
+          <h4>🐙 Push to GitHub</h4>
+<pre class="cmd-block">git init
+git add .
+git commit -m "initial commit"
+gh repo create my-app --public --push</pre>
+        </div>
+        <div class="cmd-card">
+          <h4>🚀 Deploy Vercel</h4>
+<pre class="cmd-block">npm i -g vercel
+vercel
+# atau langsung dari dashboard
+# vercel.com/new → import GitHub repo</pre>
+        </div>
+        <div class="cmd-card">
+          <h4>🐛 Debug dengan AI</h4>
+<pre class="cmd-block">"Saya dapat error: [paste error]
+File: app/dashboard/page.tsx
+Apa root cause &amp; fix-nya?"</pre>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SLIDE 14: GIT WORKFLOW -->
+  <section class="slide">
+    <div class="slide-inner">
+      <span class="eyebrow">13 · GIT</span>
+      <h2 class="title-lg">Git Workflow yang <span class="accent">Profesional</span></h2>
+      <div class="git-flow">
+        <div class="git-step">
+          <code class="git-cmd">git checkout -b feature/auth</code>
+          <p>Bikin branch baru per fitur. Jangan langsung di main.</p>
+        </div>
+        <div class="git-step">
+          <code class="git-cmd">git add . &amp;&amp; git commit -m "feat: add login page"</code>
+          <p>Commit kecil-kecil. Conventional commit: feat / fix / docs / chore.</p>
+        </div>
+        <div class="git-step">
+          <code class="git-cmd">git push origin feature/auth</code>
+          <p>Push ke remote. Vercel auto-bikin preview deploy.</p>
+        </div>
+        <div class="git-step">
+          <code class="git-cmd">gh pr create --fill</code>
+          <p>Bikin PR. Test di preview URL dulu sebelum merge.</p>
+        </div>
+        <div class="git-step">
+          <code class="git-cmd">gh pr merge --squash</code>
+          <p>Merge ke main → Vercel auto-deploy ke production.</p>
+        </div>
+      </div>
+      <div class="callout">
+        💡 <strong>Pro tip:</strong> Setiap commit = 1 perubahan jelas. AI agent biasanya commit otomatis tiap selesai 1 task.
+      </div>
+    </div>
+  </section>
+
+  <!-- SLIDE 15: ENV VARIABLES -->
+  <section class="slide">
+    <div class="slide-inner">
+      <span class="eyebrow">14 · SECURITY</span>
+      <h2 class="title-lg">Environment Variables &amp; <span class="accent">Secrets</span></h2>
+      <div class="env-table">
+        <div class="env-row head">
+          <div>Variable</div><div>Public?</div><div>Storage</div><div>Use</div>
+        </div>
+        <div class="env-row">
+          <div><code>NEXT_PUBLIC_SUPABASE_URL</code></div>
+          <div>✅ Yes</div>
+          <div>.env.local + Vercel</div>
+          <div>Client-side query</div>
+        </div>
+        <div class="env-row">
+          <div><code>NEXT_PUBLIC_SUPABASE_ANON_KEY</code></div>
+          <div>✅ Yes</div>
+          <div>.env.local + Vercel</div>
+          <div>Client-side auth (RLS protect)</div>
+        </div>
+        <div class="env-row danger">
+          <div><code>SUPABASE_SERVICE_ROLE_KEY</code></div>
+          <div>❌ NEVER</div>
+          <div>Server-only env</div>
+          <div>Admin tasks (skip RLS)</div>
+        </div>
+        <div class="env-row danger">
+          <div><code>OPENAI_API_KEY</code></div>
+          <div>❌ NEVER</div>
+          <div>Server-only env</div>
+          <div>Server API calls only</div>
+        </div>
+      </div>
+      <div class="warning-box">
+        <h4>⚠️ Yang Sering Bocor</h4>
+        <ul>
+          <li>❌ Commit <code>.env.local</code> ke GitHub → token leaked dalam menit</li>
+          <li>❌ Pakai prefix <code>NEXT_PUBLIC_</code> untuk service role key</li>
+          <li>❌ Hardcode API key di kode</li>
+        </ul>
+        <p><strong>✅ Selalu:</strong> .gitignore <code>.env*</code> · gunakan Vercel Env Variables · rotate kalau bocor</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- SLIDE 16: DEPLOY VERCEL -->
+  <section class="slide">
+    <div class="slide-inner">
+      <span class="eyebrow">15 · DEPLOY</span>
+      <h2 class="title-lg">Deploy ke <span class="accent">Vercel</span> dalam 2 Menit</h2>
+      <div class="deploy-steps">
+        <div class="deploy-step">
+          <div class="step-num">1</div>
+          <h4>Login Vercel pakai GitHub</h4>
+          <p>Buka <code>vercel.com</code> → Sign in with GitHub. Authorize akses repo.</p>
+        </div>
+        <div class="deploy-step">
+          <div class="step-num">2</div>
+          <h4>Import Repository</h4>
+          <p>Klik "Add New" → "Project" → pilih repo dari list. Vercel auto-detect Next.js.</p>
+        </div>
+        <div class="deploy-step">
+          <div class="step-num">3</div>
+          <h4>Set Environment Variables</h4>
+          <p>Tambahin <code>NEXT_PUBLIC_SUPABASE_URL</code> &amp; <code>NEXT_PUBLIC_SUPABASE_ANON_KEY</code> dari Supabase dashboard.</p>
+        </div>
+        <div class="deploy-step">
+          <div class="step-num">4</div>
+          <h4>Klik Deploy</h4>
+          <p>Vercel build → 60 detik kemudian app kamu live di <code>my-app.vercel.app</code> 🎉</p>
+        </div>
+        <div class="deploy-step">
+          <div class="step-num">5</div>
+          <h4>Bonus: Custom Domain</h4>
+          <p>Settings → Domains → tambah <code>kamu.com</code>. Update DNS, 5 menit live.</p>
+        </div>
+      </div>
+      <div class="success-banner">
+        ✨ <strong>Setiap push ke main</strong> = auto-deploy. Setiap PR = preview URL beda. Pure magic.
+      </div>
+    </div>
+  </section>
+
+  <!-- SLIDE 17: TIPS PRO -->
+  <section class="slide">
+    <div class="slide-inner">
+      <span class="eyebrow">16 · TIPS</span>
+      <h2 class="title-lg">Tips Biar Apl-mu <span class="accent">Stand Out</span></h2>
+      <div class="tips-grid">
+        <div class="tip">
+          <div class="tip-num">01</div>
+          <h4>📝 Bikin Spec Dulu</h4>
+          <p>Jangan langsung suruh AI ngoding. Bikin <code>SPEC.md</code> dengan AI dulu — schema, user flow, fitur. Ini "blueprint"-nya.</p>
+        </div>
+        <div class="tip">
+          <div class="tip-num">02</div>
+          <h4>🧪 Test di Local Dulu</h4>
+          <p>Sebelum push, jalankan <code>npm run build</code>. Kalau build error di local, pasti error di Vercel juga.</p>
+        </div>
+        <div class="tip">
+          <div class="tip-num">03</div>
+          <h4>📦 Deps Minimal</h4>
+          <p>Setiap package = 1 dependency hell. Jangan install lib yang gak perlu. Tailwind + Supabase = sudah cukup.</p>
+        </div>
+        <div class="tip">
+          <div class="tip-num">04</div>
+          <h4>🎯 Loading & Error States</h4>
+          <p>App professional punya: loading spinner, empty state, error boundary. AI bisa generate semuanya — mintain.</p>
+        </div>
+        <div class="tip">
+          <div class="tip-num">05</div>
+          <h4>📱 Mobile-First</h4>
+          <p>Test di hp! Mayoritas user akses dari mobile. Tailwind <code>sm:</code> <code>md:</code> <code>lg:</code> wajib hukumnya.</p>
+        </div>
+        <div class="tip">
+          <div class="tip-num">06</div>
+          <h4>🔍 SEO &amp; Meta</h4>
+          <p>Title, description, OG image. <code>app/layout.tsx</code> → metadata. Kalau di-share di WhatsApp, kelihatan profesional.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SLIDE 18: KESALAHAN UMUM -->
+  <section class="slide">
+    <div class="slide-inner">
+      <span class="eyebrow">17 · MISTAKES</span>
+      <h2 class="title-lg">Kesalahan yang <span class="accent">Sering Terjadi</span> ❌</h2>
+      <div class="mistakes-list">
+        <div class="mistake">
+          <span class="mistake-icon">🤖</span>
+          <div>
+            <h4>Trust AI 100%</h4>
+            <p>AI bisa hallucinate. Selalu verify: jalankan kode, cek hasil, baca log.</p>
+          </div>
+        </div>
+        <div class="mistake">
+          <span class="mistake-icon">📋</span>
+          <div>
+            <h4>Prompt Cuma "Bikin App Tasks"</h4>
+            <p>Hasilnya generic. Spec detail = output detail. Garbage in → garbage out.</p>
+          </div>
+        </div>
+        <div class="mistake">
+          <span class="mistake-icon">🔑</span>
+          <div>
+            <h4>Commit .env ke GitHub</h4>
+            <p>Token bocor → orang bisa akses database kamu. Cek <code>.gitignore</code>.</p>
+          </div>
+        </div>
+        <div class="mistake">
+          <span class="mistake-icon">🚫</span>
+          <div>
+            <h4>Skip RLS di Supabase</h4>
+            <p>Tanpa RLS, user A bisa baca data user B. <strong>Wajib enable RLS</strong>.</p>
+          </div>
+        </div>
+        <div class="mistake">
+          <span class="mistake-icon">🐛</span>
+          <div>
+            <h4>Push tanpa Test</h4>
+            <p>"Di local jalan kok" — sampai prod down. Test edge case: empty state, error.</p>
+          </div>
+        </div>
+        <div class="mistake">
+          <span class="mistake-icon">🎨</span>
+          <div>
+            <h4>UI Default Tanpa Polish</h4>
+            <p>Bare Tailwind = obvious AI-generated. Kasih sentuhan personal: warna brand, illustration, custom font.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SLIDE 19: RESOURCE -->
+  <section class="slide">
+    <div class="slide-inner">
+      <span class="eyebrow">18 · RESOURCES</span>
+      <h2 class="title-lg">Setelah Workshop, <span class="accent">Lakukan Ini</span> 👇</h2>
+      <div class="next-steps">
+        <div class="next-card">
+          <div class="next-icon">🚀</div>
+          <h3>Ship 3 Aplikasi</h3>
+          <p>Bikin 3 app beda dalam 1 bulan: SaaS sederhana, internal tool, social app. Tiap project = level-up skill kamu.</p>
+        </div>
+        <div class="next-card">
+          <div class="next-icon">📝</div>
+          <h3>Blog the Process</h3>
+          <p>Tulis di Medium / dev.to: "Cara saya bikin X pakai AI dalam Y jam". Recruiter LOVE thought process.</p>
+        </div>
+        <div class="next-card">
+          <div class="next-icon">🌐</div>
+          <h3>Domain Profesional</h3>
+          <p>Beli <code>namamu.dev</code> ($10/tahun). Hosting di Vercel. Email <code>halo@namamu.dev</code>.</p>
+        </div>
+        <div class="next-card">
+          <div class="next-icon">💼</div>
+          <h3>Update LinkedIn</h3>
+          <p>Pasang link 3 project di About. Recruiter scrolling 30 detik = tahu kamu builder.</p>
+        </div>
+      </div>
+      <div class="resources-list">
+        <h4>📚 Resource Lanjutan</h4>
+        <div class="res-grid">
+          <a class="res-link"><strong>Next.js Docs</strong><br><small>nextjs.org/docs</small></a>
+          <a class="res-link"><strong>Supabase Docs</strong><br><small>supabase.com/docs</small></a>
+          <a class="res-link"><strong>Vercel Templates</strong><br><small>vercel.com/templates</small></a>
+          <a class="res-link"><strong>Tailwind UI</strong><br><small>tailwindcss.com</small></a>
+          <a class="res-link"><strong>Codex (ChatGPT)</strong><br><small>chatgpt.com</small></a>
+          <a class="res-link"><strong>Claude Code</strong><br><small>claude.ai/code</small></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SLIDE 20: CLOSING -->
+  <section class="slide slide-closing">
+    <div class="bg-grid"></div>
+    <div class="bg-blob blob-1"></div>
+    <div class="bg-blob blob-2"></div>
+    <div class="slide-inner">
+      <h1 class="title-xl">
+        Sekarang Giliran <span class="gradient">Kamu</span>.
+      </h1>
+      <p class="subtitle">Bukan kamu vs AI. Tapi kamu <strong>+</strong> AI.</p>
+      <div class="closing-stats">
+        <div class="stat-card">
+          <div class="stat-num">8</div>
+          <div class="stat-label">Jam workshop</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-num">1</div>
+          <div class="stat-label">App lengkap</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-num">∞</div>
+          <div class="stat-label">Kemungkinan</div>
+        </div>
+      </div>
+      <div class="qna">💬 Q&amp;A — apa yang mau kamu build minggu depan?</div>
+      <div class="cover-meta">
+        <div><strong>Workshop FIKOM UDB</strong> · Universitas Duta Bangsa</div>
+        <div class="cover-tags">
+          <span class="tag">Build · Ship · Repeat</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
